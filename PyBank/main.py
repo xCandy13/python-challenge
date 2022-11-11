@@ -20,19 +20,12 @@ with open(csv_file) as csvfile:
 
     # Read the header row first (skip this step if there is no header)
     csv_header = next(csvreader)
-    #debug
-    #print(f"CSV Header: {csv_header}")
 
     # Read each row of data after the header
     for row in csvreader:
         #store data
         data.append(row)
-        #debug
-        #print(row)
-
-        #debug
-        #print(data[months][0]+', '+data[months][1])
-
+        
         #add profit/loss to total
         total = total+float(row[1])
         #count rows (months)
@@ -42,10 +35,7 @@ with open(csv_file) as csvfile:
     for i in range(1,len(data)):
         #calculate change
         number = float(data[i][1])-float(data[i-1][1])
-
-        #debug
-        #print(number)
-
+        
         #store change
         changes.append(number)
 

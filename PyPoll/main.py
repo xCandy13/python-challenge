@@ -24,9 +24,6 @@ with open(csv_file) as csvfile:
     # Read the header row first (skip this step if there is no header)
     csv_header = next(csvreader)
 
-    #debug
-    #print(f"CSV Header: {csv_header}")
-
     # Read each row of data (each vote) after the header
     for row in csvreader:
         #store data
@@ -54,9 +51,6 @@ with open(csv_file) as csvfile:
             cand_dict["name"].append(data[total_votes][2])
             cand_dict["votes"].append(0)
             cand_dict["percents"].append(0)
-        
-        #debug    
-        #print(cand_dict)
 
         #increase total_votes
         total_votes += 1
